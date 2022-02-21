@@ -65,13 +65,17 @@ const { register } = useForm({
 const { register, elFormRef, methods } = useForm(props)
 ```
 
+**props**
+
+[详见](#Form)
+
 **register**
 
 `register` 用于注册 `useForm`，如果需要使用 `useForm` 提供的 `api`，必须将 `register` 传入组件的 `onRegister`
 
 **elFormRef**
 
-当前 `elForm` 实例，可是用所有 `elForm` 实例方法。
+当前 `elForm` 实例，可使用所有 `elForm` 实例方法。
 
 **methods**
 
@@ -84,7 +88,7 @@ const { register, elFormRef, methods } = useForm(props)
 | setSchema | 用于编辑表单结构 | (schemaProps: FormSetPropsType[]) => void |
 | getFormData | 用于获取表单数据 | <T = Recordable | undefined>() => Promise<T> |
 
-## Form 属性
+## Form 属性<span id="Form"></span>
 
 除以下参数外，还支持 `element-plus` 的 `Form` 所有属性，[详见](https://element-plus.org/zh-CN/component/form.html#form-%E5%B1%9E%E6%80%A7)
 

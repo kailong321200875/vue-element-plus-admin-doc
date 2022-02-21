@@ -76,8 +76,16 @@ function createNav() {
           link: '/components/introduction',
         },
         {
-          text: '功能组件',
+          text: '全局组件',
           link: '/components/icon',
+        },
+        {
+          text: '功能组件',
+          link: '/components/form',
+        },
+        {
+          text: '函数式',
+          link: '/components/image-viewer',
         },
       ],
     },
@@ -85,15 +93,27 @@ function createNav() {
       text: '相关链接',
       items: [
         {
-          text: '完整版预览',
+          text: 'Github 站点预览',
           link: 'https://element-plus-admin.cn/',
         },
         {
-          text: '完整版源码',
+          text: 'Github 源码',
           link: 'https://github.com/kailong321200875/vue-element-plus-admin',
         },
         {
-          text: '文档源码',
+          text: 'Github 文档源码',
+          link: 'https://github.com/kailong321200875/vue-element-plus-admin-doc',
+        },
+        {
+          text: 'Gitee 站点预览',
+          link: 'https://element-plus-admin.cn/',
+        },
+        {
+          text: 'Gitee 源码',
+          link: 'https://github.com/kailong321200875/vue-element-plus-admin',
+        },
+        {
+          text: 'Gitee 文档源码',
           link: 'https://github.com/kailong321200875/vue-element-plus-admin-doc',
         },
         {
@@ -127,11 +147,60 @@ function createSidebar() {
         ],
       },
       {
-        text: '常用组件',
+        text: '功能组件',
         children: [
           {
             text: 'Form 表单组件',
             link: '/components/form',
+          },
+          {
+            text: 'Table 表格组件',
+            link: '/components/Table',
+          },
+          {
+            text: 'Editor 富文本组件',
+            link: '/components/editor',
+          },
+          {
+            text: 'Search 查询组件',
+            link: '/components/search',
+          },
+          {
+            text: 'Descriptions 描述组件',
+            link: '/components/descriptions',
+          },
+          {
+            text: 'Dialog 弹窗组件',
+            link: '/components/dialog',
+          },
+          {
+            text: 'Echart 图表组件',
+            link: '/components/echart',
+          },
+          {
+            text: 'CountTo 数字动画组件',
+            link: '/components/count-to',
+          },
+          {
+            text: 'Qrcode 二维码组件',
+            link: '/components/qrcode',
+          },
+          {
+            text: 'Highlight 高亮组件',
+            link: '/components/highlight',
+          },
+          {
+            text: 'Infotip 信息提示组件',
+            link: '/components/infotip',
+          }
+        ],
+      },
+      {
+        text: '函数式组件',
+        children: [
+          {
+            text: 'ImageViewer 图片预览组件',
+            link: '/components/image-viewer',
           },
         ],
       },
