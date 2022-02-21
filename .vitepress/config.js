@@ -267,14 +267,3 @@ function createSidebar() {
     ],
   };
 }
-
-// /**
-//  * @type {(namespace:string,items:string[])=>string[]}
-//  */
-// function urlWrapper(namespace, items) {
-//   return items.map((item) => namespace + item);
-// }
-
-// function getGuildNav() {
-//   return urlWrapper('/guide', ['/']);
-// }
