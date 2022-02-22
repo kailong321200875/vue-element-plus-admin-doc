@@ -6,7 +6,7 @@ on:
       - master
 
 jobs:
-  push-to-gh-pages-gitee:
+  push-to-gh-pages:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -46,12 +46,13 @@ jobs:
           yarn install
           yarn run build:gitee
 
-      - name: Docs Deploy Gitee
+      - name: Docs Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           deploy_key: ${{secrets.ACTIONS_DEPLOY_KEY}}
           publish_branch: gh-pages-gitee
           publish_dir: ./.vitepress/dist
+          keep_files: true
 
       - name: Sync Github Repos To Gitee # 名字随便起
         uses: Yikun/hub-mirror-action@v1.1 # 使用Yikun/hub-mirror-action
