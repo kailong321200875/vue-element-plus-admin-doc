@@ -3,7 +3,7 @@
  * @type {import('vitepress').UserConfig}
  */
 module.exports = {
-  base: '/',
+  base: (process.argv[3] && process.argv[3] === 'gitee') ? '/vue-element-plus-admin-doc/' : '/',
   title: 'vue-element-plus-admin',
   lang: 'zh-CN',
   description: '一套基于vue3、element-plus、typesScript4、vite2的后台集成方案',
@@ -84,7 +84,7 @@ function createNav() {
           link: '/components/form',
         },
         {
-          text: '函数式',
+          text: '函数式组件',
           link: '/components/image-viewer',
         },
       ],
