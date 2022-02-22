@@ -53,4 +53,4 @@ jobs:
           publish_branch: gh-pages
           publish_dir: ./.vitepress/dist
           force_orphan: true
-          cname: element-plus-doc.cn
+          cname: element-plus-admin-doc.cn
