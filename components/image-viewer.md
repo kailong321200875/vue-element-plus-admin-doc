@@ -2,6 +2,8 @@
 
 将 `element-plus` 的 `ImageViewer` 组件函数化，通过函数方便创建组件。
 
+ImageViewer 组件位于 [src/components/ImageViewer](https://github.com/kailong321200875/vue-element-plus-admin/tree/master/src/components/ImageViewer) 内
+
 ## 用法
 
 ```vue

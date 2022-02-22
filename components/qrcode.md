@@ -2,6 +2,8 @@
 
 基于 `qrcode` 封装。
 
+Qrcode 组件位于 [src/components/Qrcode](https://github.com/kailong321200875/vue-element-plus-admin/tree/master/src/components/Qrcode) 内
+
 ## 用法
 
 更复杂点的例子，请[在线预览](https://element-plus-admin.cn/#/components/qrcode)

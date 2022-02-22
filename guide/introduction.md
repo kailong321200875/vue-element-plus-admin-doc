@@ -36,18 +36,16 @@
 ├── mock # 自定义 mock 数据及配置
 ├── public # 静态资源
 ├── src # 项目代码
+│   ├── api # api接口管理
 │   ├── assets # 静态资源
-│   ├── axios-config # axios配置
 │   ├── components # 公用组件
-│   ├── directive # 自定义指令
 │   ├── hooks # 常用hooks
 │   ├── layout # 布局组件
+│   ├── locales # 语言文件
 │   ├── plugins # 外部插件
-│   ├── mock # 模拟数据
 │   ├── router # 路由配置
 │   ├── store # 状态管理
 │   ├── styles # 全局样式
-│   ├── types # 全局类型
 │   ├── utils # 全局工具类
 │   ├── views # 路由页面
 │   ├── App.vue # 入口vue文件
@@ -56,6 +54,7 @@
 ├── types # 全局类型
 ├── .env.base # 本地开发环境 环境变量配置
 ├── .env.dev # 打包到开发环境 环境变量配置
+├── .env.gitee # 针对 gitee 的环境变量 可忽略
 ├── .env.pro # 打包到生产环境 环境变量配置
 ├── .env.test # 打包到测试环境 环境变量配置
 ├── .eslintignore # eslint 跳过检测配置
@@ -63,8 +62,8 @@
 ├── .gitignore # git 跳过配置
 ├── .prettierignore # prettier 跳过检测配置
 ├── .stylelintignore # stylelint 跳过检测配置
-├── CHANGELOG.en.md # 英文更新记录
-├── CHANGELOG.zh_CN.md # 中文更新记录
+├── .versionrc 自动生成版本号及更新记录配置
+├── CHANGELOG.md # 更新记录
 ├── commitlint.config.js # git commit 提交规范配置
 ├── index.html # 入口页面
 ├── package.json

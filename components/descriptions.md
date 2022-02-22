@@ -2,6 +2,8 @@
 
 对 `element-plus` 的 `Descriptions` 组件进行封装。
 
+Descriptions 组件位于 [src/components/Descriptions](https://github.com/kailong321200875/vue-element-plus-admin/tree/master/src/components/Descriptions) 内
+
 ## 用法
 
 更复杂点的例子，请[在线预览](https://element-plus-admin.cn/#/components/descriptions)

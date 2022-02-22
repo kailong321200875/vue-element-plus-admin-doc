@@ -196,7 +196,11 @@ function createSidebar() {
           {
             text: 'Infotip 信息提示组件',
             link: '/components/infotip',
-          }
+          },
+          {
+            text: 'Error 缺省组件',
+            link: '/components/error',
+          },
         ],
       },
       {

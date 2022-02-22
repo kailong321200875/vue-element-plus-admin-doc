@@ -6,6 +6,8 @@
 
 可自行阅读 [wangeditor文档](https://www.wangeditor.com/v5/)
 
+Editor 组件位于 [src/components/Editor](https://github.com/kailong321200875/vue-element-plus-admin/tree/master/src/components/Editor) 内
+
 ## 用法
 
 ```vue
