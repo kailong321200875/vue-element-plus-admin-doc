@@ -12,7 +12,7 @@ module.exports = {
     repo: 'kailong321200875/vue-element-plus-adminc',
     docsRepo: 'kailong321200875/vue-element-plus-admin-doc',
     logo: '/logo.png',
-    docsBranch: 'main',
+    docsBranch: 'master',
     editLinks: true,
     editLinkText: '为此页提供修改建议',
     nav: createNav(),
