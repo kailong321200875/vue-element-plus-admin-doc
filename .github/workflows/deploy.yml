@@ -52,4 +52,5 @@ jobs:
           deploy_key: ${{secrets.ACTIONS_DEPLOY_KEY}}
           publish_branch: gh-pages
           publish_dir: ./.vitepress/dist
-          keep_files: true
+          force_orphan: true
+          cname: element-plus-doc.cn
