@@ -105,20 +105,24 @@ function createNav() {
           link: 'https://github.com/kailong321200875/vue-element-plus-admin-doc',
         },
         {
+          text: 'Github 更新日志',
+          link: 'https://github.com/kailong321200875/vue-element-plus-admin/blob/master/CHANGELOG.md',
+        },
+        {
           text: 'Gitee 站点预览',
-          link: 'https://element-plus-admin.cn/',
+          link: 'https://kailong110120130.gitee.io/vue-element-plus-admin',
         },
         {
           text: 'Gitee 源码',
-          link: 'https://github.com/kailong321200875/vue-element-plus-admin',
+          link: 'https://gitee.com/kailong110120130/vue-element-plus-admin',
         },
         {
           text: 'Gitee 文档源码',
-          link: 'https://github.com/kailong321200875/vue-element-plus-admin-doc',
+          link: 'https://gitee.com/kailong110120130/vue-element-plus-admin-doc',
         },
         {
-          text: '更新日志',
-          link: 'https://github.com/kailong321200875/vue-element-plus-admin/blob/master/CHANGELOG.zh_CN.md',
+          text: 'Gitee 更新日志',
+          link: 'https://gitee.com/kailong110120130/vue-element-plus-admin/blob/master/CHANGELOG.md',
         },
       ],
     },
