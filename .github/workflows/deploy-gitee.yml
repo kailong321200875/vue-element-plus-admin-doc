@@ -53,7 +53,6 @@ jobs:
           publish_branch: gh-pages-gitee
           publish_dir: ./.vitepress/dist
           force_orphan: true
-          cname: element-plus-doc.cn
 
       - name: Sync Github Repos To Gitee # 名字随便起
         uses: Yikun/hub-mirror-action@v1.1 # 使用Yikun/hub-mirror-action
