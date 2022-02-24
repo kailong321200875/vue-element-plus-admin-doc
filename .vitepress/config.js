@@ -159,7 +159,7 @@ function createSidebar() {
           },
           {
             text: 'Table 表格组件',
-            link: '/components/Table',
+            link: '/components/table',
           },
           {
             text: 'Editor 富文本组件',
