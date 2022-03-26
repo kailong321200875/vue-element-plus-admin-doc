@@ -3,7 +3,7 @@
  * @type {import('vitepress').UserConfig}
  */
 module.exports = {
-  base: '/',
+  base: (process.argv[3] && process.argv[3] === '--gitee') ? '/vue-element-plus-admin-doc/' : '/',
   title: 'vue-element-plus-admin',
   lang: 'zh-CN',
   description: '一套基于vue3、element-plus、typesScript4、vite2的后台集成方案',
@@ -12,7 +12,7 @@ module.exports = {
     repo: 'kailong321200875/vue-element-plus-adminc',
     docsRepo: 'kailong321200875/vue-element-plus-admin-doc',
     logo: '/logo.png',
-    docsBranch: 'main',
+    docsBranch: 'master',
     editLinks: true,
     editLinkText: '为此页提供修改建议',
     nav: createNav(),
@@ -115,20 +115,24 @@ function createNav() {
           link: 'https://github.com/kailong321200875/vue-element-plus-admin-doc',
         },
         {
+          text: 'Github 更新日志',
+          link: 'https://github.com/kailong321200875/vue-element-plus-admin/blob/master/CHANGELOG.md',
+        },
+        {
           text: 'Gitee 站点预览',
-          link: 'https://element-plus-admin.cn/',
+          link: 'https://kailong110120130.gitee.io/vue-element-plus-admin',
         },
         {
           text: 'Gitee 源码',
-          link: 'https://github.com/kailong321200875/vue-element-plus-admin',
+          link: 'https://gitee.com/kailong110120130/vue-element-plus-admin',
         },
         {
           text: 'Gitee 文档源码',
-          link: 'https://github.com/kailong321200875/vue-element-plus-admin-doc',
+          link: 'https://gitee.com/kailong110120130/vue-element-plus-admin-doc',
         },
         {
-          text: '更新日志',
-          link: 'https://github.com/kailong321200875/vue-element-plus-admin/blob/master/CHANGELOG.zh_CN.md',
+          text: 'Gitee 更新日志',
+          link: 'https://gitee.com/kailong110120130/vue-element-plus-admin/blob/master/CHANGELOG.md',
         },
       ],
     },
@@ -171,7 +175,7 @@ function createSidebar() {
           },
           {
             text: 'Table 表格组件',
-            link: '/components/Table',
+            link: '/components/table',
           },
           {
             text: 'Editor 富文本组件',
@@ -208,7 +212,11 @@ function createSidebar() {
           {
             text: 'Infotip 信息提示组件',
             link: '/components/infotip',
-          }
+          },
+          {
+            text: 'Error 缺省组件',
+            link: '/components/error',
+          },
         ],
       },
       {

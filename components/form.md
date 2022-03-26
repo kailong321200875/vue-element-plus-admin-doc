@@ -107,6 +107,7 @@ const { register, elFormRef, methods } = useForm(props)
 | ---- | ---- | ---- | ---- | ---- |
 | field | 唯一值，必填项 | `string` | - | - |
 | label | 标题 | `string` | - | - |
+| labelMessage (1.1.7新增) | 表单项说明 | `string` | - | - |
 | colProps | element-plus 的 col 组件属性 | `ColProps` | - | - |
 | componentProps | 表单组件子属性，[详见](#ComponentProps) | `{ slots?: Recordable } & ComponentProps` | - | - |
 | formItemProps | element-plus 的 form-item 组件属性，[详见](#FormItemProps) | `FormItemProps` | - | - |

@@ -12,6 +12,8 @@ Icon 组件位于 [src/components/Icon](https://github.com/kailong321200875/vue-
 
 ## 用法
 
+### 基本用法
+
 如果以`svg-icon:` 开头，则会在本地中找到该 `svg` 图标，否则，会加载 `Iconify` 图标。
 
 ```vue
@@ -25,7 +27,34 @@ Icon 组件位于 [src/components/Icon](https://github.com/kailong321200875/vue-
 
 ```
 
-## Icon 属性
+### useIcon
+
+如果需要在其他组件中如 `ElButton` 传入 `icon` 属性，可以使用 `useIcon`
+
+```vue
+<script setup lang="ts">
+import { useIcon } from '@/hooks/web/useIcon'
+import { ElButton } from 'element-plus'
+
+const icon = useIcon({ icon: 'svg-icon:save' })
+</script>
+
+<template>
+  <ElButton :icon="icon"> button </ElButton>
+</template>
+```
+
+#### 参数介绍
+
+```ts
+const icon = useIcon(props)
+```
+
+**props**
+
+[详见](#Icon)
+
+## Icon 属性<span id="Icon"></span>
 
 | 属性 | 说明 | 类型 | 可选值 | 默认值 |
 | ---- | ---- | ---- | ---- | ---- |

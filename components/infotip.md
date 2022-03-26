@@ -2,6 +2,8 @@
 
 基于 `Highlight` 组件封装。
 
+Infotip 组件位于 [src/components/Infotip](https://github.com/kailong321200875/vue-element-plus-admin/tree/master/src/components/Infotip) 内
+
 ## 用法
 
 ```vue

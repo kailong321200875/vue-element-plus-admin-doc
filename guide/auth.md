@@ -217,5 +217,5 @@ const redirectPath = from.query.redirect || to.path
 const redirect = decodeURIComponent(redirectPath as string)
 const nextData = to.path === redirect ? { ...to, replace: true } : { path: redirect }
 permissionStore.setIsAddRouters(true)
-next(to.path === '/' ? { path: permissionStore.addRouters[0]?.path as string } : nextData)
+next(nextData)
 ```

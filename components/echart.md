@@ -2,6 +2,8 @@
 
 对 `echarts` 进行封装，自适应窗口大小。
 
+Echart 组件位于 [src/components/Echart](https://github.com/kailong321200875/vue-element-plus-admin/tree/master/src/components/Echart) 内
+
 ## 用法
 
 只需传入对应的 `options` 和 `height` 即可展示图表。

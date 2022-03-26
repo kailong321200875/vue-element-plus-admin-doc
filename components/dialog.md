@@ -2,6 +2,8 @@
 
 对 `element-plus` 的 `Dialog` 组件进行封装。
 
+Dialog 组件位于 [src/components/Dialog](https://github.com/kailong321200875/vue-element-plus-admin/tree/master/src/components/Dialog) 内
+
 ## 用法
 
 ```vue

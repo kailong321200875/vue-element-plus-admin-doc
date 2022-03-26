@@ -1,4 +1,4 @@
-name: docs-deploy
+name: Docs Deploy Gitee
 
 on:
   push:
@@ -12,16 +12,16 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: use Node.js 16
+      - name: Use Node.js 16
         uses: actions/setup-node@v2.1.2
         with:
           node-version: '16.x'
 
-      - name: Get yarn cache
+      - name: Get Yarn Cache
         id: yarn-cache
         run: echo "::set-output name=dir::$(yarn cache dir)"
 
-      - name: Cache dependencies
+      - name: Cache Dependencies
         uses: actions/cache@v2
         with:
           path: ${{ steps.yarn-cache.outputs.dir }}
@@ -44,12 +44,26 @@ jobs:
       - name: Build
         run: |
           yarn install
-          yarn run build
+          yarn run build:gitee
 
-      - name: Deploy
+      - name: Docs Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           deploy_key: ${{secrets.ACTIONS_DEPLOY_KEY}}
-          publish_branch: gh-pages
+          publish_branch: gh-pages-gitee
           publish_dir: ./.vitepress/dist
-          keep_files: true
+          force_orphan: true
+
+      - name: Sync Github Repos To Gitee # 名字随便起
+        uses: Yikun/hub-mirror-action@v1.1 # 使用Yikun/hub-mirror-action
+        with:
+          src: github/kailong321200875 # 源端账户名(github)
+          dst: gitee/kailong110120130 # 目的端账户名(gitee)
+          dst_key: ${{ secrets.ACTIONS_DEPLOY_KEY }} # SSH密钥对中的私钥
+          dst_token: ${{ secrets.GITEE_TOKEN }} # Gitee账户的私人令牌
+          account_type: user # 账户类型
+          clone_style: 'https' # 使用https方式进行clone，也可以使用ssh
+          debug: true # 启用后会显示所有执行命令
+          force_update: true # 启用后，强制同步，即强制覆盖目的端仓库
+          static_list: 'vue-element-plus-admin-doc' # 静态同步列表，在此填写需要同步的仓库名称，可填写多个
+          timeout: '600s' # git超时设置，超时后会自动重试git操作

@@ -7,7 +7,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "vitepress dev",
-    "build": "vitepress build",
+    "build:github": "vitepress build --github",
+    "build:gitee": "vitepress build --gitee",
     "serve": "vitepress serve"
   },
   "devDependencies": {

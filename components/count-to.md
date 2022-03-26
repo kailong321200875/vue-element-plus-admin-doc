@@ -2,6 +2,8 @@
 
 基于 `vue-count-to` 改造
 
+CountTo 组件位于 [src/components/CountTo](https://github.com/kailong321200875/vue-element-plus-admin/tree/master/src/components/CountTo) 内
+
 ## 用法
 
 更复杂点的例子，请[在线预览](https://element-plus-admin.cn/#/components/count-to)

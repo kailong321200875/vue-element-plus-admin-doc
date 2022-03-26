@@ -2,6 +2,8 @@
 
 基于 `Form` 组件封装，支持收缩展开。
 
+Search 组件位于 [src/components/Search](https://github.com/kailong321200875/vue-element-plus-admin/tree/master/src/components/Search) 内
+
 ## 用法
 
 更复杂例子，请[在线预览](https://element-plus-admin.cn/#/components/search)

@@ -1,5 +1,7 @@
 # Highlight 高亮组件
 
+Highlight 组件位于 [src/components/Highlight](https://github.com/kailong321200875/vue-element-plus-admin/tree/master/src/components/Highlight) 内
+
 ## 用法
 
 组件只能接收纯文本。
