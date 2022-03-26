@@ -84,8 +84,18 @@ function createNav() {
           link: '/components/form',
         },
         {
-          text: '函数式',
+          text: '函数式组件',
           link: '/components/image-viewer',
+        },
+      ],
+    },
+    {
+      text: '常用Hooks',
+      link: '/hooks/',
+      items: [
+        {
+          text: 'useWatermark',
+          link: '/hooks/useWatermark',
         },
       ],
     },
@@ -127,6 +137,12 @@ function createNav() {
 
 function createSidebar() {
   return {
+    '/hooks/': [
+      {
+        text: 'useWatermark',
+        link: '/hooks/useWatermark',
+      },
+    ],
     '/components/': [
       {
         text: '组件',
