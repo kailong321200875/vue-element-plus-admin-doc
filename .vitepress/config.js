@@ -217,6 +217,14 @@ function createSidebar() {
             text: 'Error 缺省组件',
             link: '/components/error',
           },
+          {
+            text: 'InputPassword 密码输入框组件',
+            link: '/components/input-password',
+          },
+          {
+            text: 'Footer 页脚组件',
+            link: '/components/footer',
+          },
         ],
       },
       {

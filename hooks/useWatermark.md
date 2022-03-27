@@ -28,6 +28,7 @@ onBeforeUnmount(() => {
 
 ```ts
 const { setWatermark, clear } = useWatermark()
+```
 
 **setWatermark**
 
@@ -36,5 +37,3 @@ const { setWatermark, clear } = useWatermark()
 **clear**
 
 `clear` 用于清除水印
-
-```
