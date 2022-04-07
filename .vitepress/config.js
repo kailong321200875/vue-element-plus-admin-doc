@@ -90,6 +90,16 @@ function createNav() {
       ],
     },
     {
+      text: '常用Hooks',
+      link: '/hooks/',
+      items: [
+        {
+          text: 'useWatermark',
+          link: '/hooks/useWatermark',
+        },
+      ],
+    },
+    {
       text: '相关链接',
       items: [
         {
@@ -131,6 +141,12 @@ function createNav() {
 
 function createSidebar() {
   return {
+    '/hooks/': [
+      {
+        text: 'useWatermark',
+        link: '/hooks/useWatermark',
+      },
+    ],
     '/components/': [
       {
         text: '组件',
@@ -208,6 +224,14 @@ function createSidebar() {
           {
             text: 'ContentDetailWrap 详情包裹组件',
             link: '/components/content-detail-wrap',
+          },
+          {
+            text: 'InputPassword 密码输入框组件',
+            link: '/components/input-password',
+          },
+          {
+            text: 'Footer 页脚组件',
+            link: '/components/footer',
           },
         ],
       },
