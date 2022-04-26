@@ -97,6 +97,10 @@ function createNav() {
           text: 'useWatermark',
           link: '/hooks/useWatermark',
         },
+        {
+          text: 'useCrudSchemas',
+          link: '/hooks/useCrudSchemas',
+        },
       ],
     },
     {
@@ -145,6 +149,10 @@ function createSidebar() {
       {
         text: 'useWatermark',
         link: '/hooks/useWatermark',
+      },
+      {
+        text: 'useCrudSchemas',
+        link: '/hooks/useCrudSchemas',
       },
     ],
     '/components/': [
