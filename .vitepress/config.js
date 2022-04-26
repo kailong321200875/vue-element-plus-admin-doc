@@ -310,6 +310,10 @@ function createSidebar() {
             text: '黑暗主题',
             link: '/dep/dark',
           },
+          {
+            text: '模版生成',
+            link: '/dep/create-module',
+          },
         ],
       },
     ],

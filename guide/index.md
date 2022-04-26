@@ -146,6 +146,8 @@ pnpm run dev
   "lint:style": "stylelint --fix \"**/*.{vue,less,postcss,css,scss}\" --cache --cache-location node_modules/.cache/stylelint/",
   "lint:lint-staged": "lint-staged -c ./.husky/lintstagedrc.js",
   "lint:pretty": "pretty-quick --staged",
-  "postinstall": "husky install"
+  "postinstall": "husky install",
+  # 快速生成统一规范的模块
+  "p": "plop"
 },
 ```
