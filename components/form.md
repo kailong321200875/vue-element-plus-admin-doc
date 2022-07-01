@@ -86,7 +86,7 @@ const { register, elFormRef, methods } = useForm(props)
 | delSchema | 用于删除表单结构 | (field: string) => void |
 | addSchema | 用于新增表单结构 | (formSchema: FormSchema, index?: number) => void |
 | setSchema | 用于编辑表单结构 | (schemaProps: FormSetPropsType[]) => void |
-| getFormData | 用于获取表单数据 | <T = Recordable | undefined>() => Promise<T> |
+| getFormData | 用于获取表单数据 | `<T = Recordable>() => Promise<T>` |
 
 ## Form 属性<span id="Form"></span>
 
@@ -114,6 +114,7 @@ const { register, elFormRef, methods } = useForm(props)
 | component | 需要渲染的表单子组件 | `ComponentName` | - | - |
 | value | 表单子组件初始值 | `FormValueType` | - | - |
 | hidden | 表单子组件是否隐藏 | `boolean` | - | - |
+| api | 加载 options 方法，只在 `useCrudSchema` 有效 | `<T = any>() => AxiosPromise<T>` | - | - |
 
 ### ComponentProps<span id="ComponentProps"></span>
 

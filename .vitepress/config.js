@@ -3,7 +3,7 @@
  * @type {import('vitepress').UserConfig}
  */
 module.exports = {
-  base: (process.argv[3] && process.argv[3] === '--gitee') ? '/vue-element-plus-admin-doc/' : '/',
+  base: process.argv[3] && process.argv[3] === '--gitee' ? '/vue-element-plus-admin-doc/' : '/',
   title: 'vue-element-plus-admin',
   lang: 'zh-CN',
   description: '一套基于vue3、element-plus、typesScript4、vite2的后台集成方案',
@@ -97,6 +97,10 @@ function createNav() {
           text: 'useWatermark',
           link: '/hooks/useWatermark',
         },
+        {
+          text: 'useCrudSchemas',
+          link: '/hooks/useCrudSchemas',
+        },
       ],
     },
     {
@@ -145,6 +149,10 @@ function createSidebar() {
       {
         text: 'useWatermark',
         link: '/hooks/useWatermark',
+      },
+      {
+        text: 'useCrudSchemas',
+        link: '/hooks/useCrudSchemas',
       },
     ],
     '/components/': [

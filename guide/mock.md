@@ -103,39 +103,26 @@ export { config }
 import { useAxios } from '@/hooks/web/useAxios'
 import type { TableData } from './types'
 
-const { request } = useAxios()
+const request = useAxios()
 
-export const getTableListApi = ({ params }: AxiosConfig) => {
-  return request<{
-    total: number
-    list: TableData[]
-  }>({ url: '/example/list', method: 'get', params })
+export const getTableListApi = async (params: any): Promise<IResponse> => {
+  const res = await request.get({ url: '/example/list', params })
+  return res && res.data
 }
 
-export const saveTableApi = ({ data }: AxiosConfig<Recordable, TableData>) => {
-  return request({ url: '/example/save', method: 'post', data })
+export const saveTableApi = async (data: Partial<TableData>): Promise<IResponse> => {
+  const res = await request.post({ url: '/example/save', data })
+  return res && res.data
 }
 
-export const getTableDetApi = ({
-  params
-}: AxiosConfig<
-  {
-    id: string
-  },
-  Recordable
->) => {
-  return request<TableData>({ url: '/example/detail', method: 'get', params })
+export const getTableDetApi = async (id: string): Promise<IResponse<TableData>> => {
+  const res = await request.get({ url: '/example/detail', params: { id } })
+  return res && res.data
 }
 
-export const delTableListApi = ({
-  data
-}: AxiosConfig<
-  Recordable,
-  {
-    id: string[] | number[]
-  }
->) => {
-  return request({ url: '/example/delete', method: 'post', data })
+export const delTableListApi = async (ids: string[] | number[]): Promise<IResponse> => {
+  const res = await request.post({ url: '/example/delete', data: { ids } })
+  return res && res.data
 }
 
 ```

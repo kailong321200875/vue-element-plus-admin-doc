@@ -96,13 +96,7 @@ const columns = reactive<TableColumn[]>([
   }
 ])
 
-const { register, tableObject, methods } = useTable<
-  {
-    total: number
-    list: TableData[]
-  },
-  TableData
->({
+const { register, tableObject, methods } = useTable<TableData>({
   getListApi: getTableListApi,
   response: {
     list: 'list',
@@ -142,14 +136,12 @@ interface Response {
   list: TableData[]
 }
 
-const { register, tableObject, methods, elTableRef } = useTable<Response, TableData>(props: UseTableConfig)
+const { register, tableObject, methods, elTableRef } = useTable<TableData>(props: UseTableConfig)
 ```
 
-**useTable** 可以传入自定义类型 `<T, K, L extends AxiosConfig = AxiosConfig>`
+**useTable** 可以传入自定义类型 `<T>`
 
-- T 代表接口返回的数据类型。
-- K 代表接口返回的表格数据类型。
-- L 代表接口请求参数的类型。
+- T 代表接口返回的表格数据类型。
 
 在实际需求中，可能会遇到分页参数命名不同的情况，请自行在 [src/hooks/web/useTable.ts](https://github.com/kailong321200875/vue-element-plus-admin/tree/master/src/hooks/web/useTable.ts) 进行替换，搜索 `pageSize` 及 `pageIndex`。
 
