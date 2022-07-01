@@ -14,6 +14,10 @@ useCrudSchemas 位于 [src/hooks/web/useCrudSchemas.ts](https://github.com/kailo
 
 :::
 
+`Search` 是基于 `Form` 进行二次封装的，所以 `Search` 支持的参数 `Form` 也都支持。
+
+`search` 与 `form` 字段，可以传入 `dictName` 来获取全局的字典数据，也可以传入 `api` 来获取接口数据，如果使用 `api` ，需要主动 `return` 数据。
+
 如果想看更复杂点的例子，请[在线预览](https://element-plus-admin.cn/#/hooks/useCrudSchemas)
 
 ```vue
