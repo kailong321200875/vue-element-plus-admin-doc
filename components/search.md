@@ -41,6 +41,7 @@ const schema = reactive<FormSchema[]>([
 | showReset | 是否显示重置按钮 | `boolean` | - | true |
 | expand | 是否显示伸缩按钮 | `boolean` | - | false |
 | expandField | 伸缩的界限字段 | `string` | - | - |
+| inline | 是否是行内 | `boolean` | - | true |
 
 ## Search 事件
 
