@@ -20,7 +20,7 @@
 - [Pinia](https://pinia.vuejs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Vue-router](https://next.router.vuejs.org/)
-- [Element-plus](https://2x.antdv.com/docs/vue/introduce-cn/)
+- [Element-plus](https://element-plus.org/)
 - [Es6](https://es6.ruanyifeng.com/)
 - [Vitejs](https://vitejs.dev/)
 - [WindiCss](https://windicss.netlify.app/)
