@@ -2,7 +2,7 @@
 
 ## 简介
 
-[vue-element-plus-admin](https://github.com/kailong321200875/vue-element-plus-admin) 是一个基于 [element-plus](https://element-plus.org/) 免费开源的中后台模版。使用了最新的 [Vue3](https://github.com/vuejs/vue-next)，[Vite2](https://github.com/vitejs/vite)，[Typescript](https://www.typescriptlang.org/)等主流技术开发，开箱即用的中后台前端解决方案，可以用来作为项目的启动模版，也可用于学习参考。并且时刻关注着最新技术动向，尽可能的第一时间更新。
+[vue-element-plus-admin](https://github.com/kailong321200875/vue-element-plus-admin) 是一个基于 [element-plus](https://element-plus.org/) 免费开源的中后台模版。使用了最新的 [Vue3](https://github.com/vuejs/vue-next)，[Vite3](https://github.com/vitejs/vite)，[Typescript](https://www.typescriptlang.org/)等主流技术开发，开箱即用的中后台前端解决方案，可以用来作为项目的启动模版，也可用于学习参考。并且时刻关注着最新技术动向，尽可能的第一时间更新。
 
 [vue-element-plus-admin](https://github.com/kailong321200875/vue-element-plus-admin) 的定位是后台集成方案，不太适合当基础模板来进行二次开发。因为集成了很多你可能用不到的功能，会造成不少的代码冗余。如果你的项目不关注这方面的问题，也可以直接基于它进行二次开发。
 

@@ -183,12 +183,12 @@ const getRole = async () => {
     const { wsCache } = useCache()
     const routers = res.data.list || []
     wsCache.set('roleRouters', routers)
-    
+
     // 不管最终要使用什么方式进行权限过滤，都需要调用 permissionStore.generateRoutes()
     formData.username === 'admin'
       ? await permissionStore.generateRoutes('admin', routers).catch(() => {})
       : await permissionStore.generateRoutes('test', routers).catch(() => {})
-    
+
     // 过滤完路由之后，需要动态注册路由
     permissionStore.getAddRouters.forEach((route) => {
       addRoute(route as RouteRecordRaw) // 动态添加可访问路由表
@@ -219,3 +219,9 @@ const nextData = to.path === redirect ? { ...to, replace: true } : { path: redir
 permissionStore.setIsAddRouters(true)
 next(nextData)
 ```
+
+## 静态路由（无权限）
+
+有时候，我们并不需要动态路由，那么可以在 `src/config/app.ts` 中把 `dynamicRouter` 设置为 `false`，这样我们取得都是项目中的静态路由表了。
+
+内部逻辑已经处理了静态路由的部分，所以可以无需关心其他。
