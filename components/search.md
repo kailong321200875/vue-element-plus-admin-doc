@@ -48,4 +48,4 @@ const schema = reactive<FormSchema[]>([
 | 方法名 | 说明 | 回调参数 |
 | ---- | ---- | ---- |
 | search | 查询后的回调 | data: Recordable |
-| reset | 重置后的回到 | data: Recordable |
+| reset | 重置后的回调 | data: Recordable |
