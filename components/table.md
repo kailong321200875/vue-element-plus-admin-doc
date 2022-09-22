@@ -232,7 +232,7 @@ const delData = async (paramsObj: AxiosConfig, ids: string[] | number[]) => {
 | setProps | 用于表格组件属性 | (props: Recordable) => void |
 | getList | 获取表格数据 | `() => Promise<void>` |
 | setColumn | 设置表头结构 | (columnProps: TableSetPropsType[]) => void |
-| setSearchParmas | 与 Search 组件配置，用于获取 Search 组件返回的查询数据 | (data: Recordable) => void |
+| setSearchParams | 与 Search 组件配置，用于获取 Search 组件返回的查询数据 | (data: Recordable) => void |
 | getSelections | 获取多选数据 | () => Promise<K[]> |
 | delList | 删除数据接口 | `(ids: string[], multiple: boolean, message?: boolean) => Promise<void>` |
 
