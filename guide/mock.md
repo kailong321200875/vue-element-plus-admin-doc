@@ -149,14 +149,13 @@ export const delTableListApi = ({ data }) => {
 
 ## axios 配置
 
-**axios** 请求封装存放于 [src/hooks/web/useAxios.ts](https://github.com/kailong321200875/vue-element-plus-admin/blob/master/src/hooks/web/useAxios.ts) 中。
-
-其他的配置，则存放在 [src/config/axios/](https://github.com/kailong321200875/vue-element-plus-admin/tree/master/src/config/axios)
+配置存放在 [src/config/axios/](https://github.com/kailong321200875/vue-element-plus-admin/tree/master/src/config/axios)文件夹中
 
 ```js
 
 ├── config.ts // axios 配置
 ├── index.ts // 接口返回统一处理
+├── service.ts // axios实例
 
 ```
 
