@@ -54,7 +54,7 @@ const { register } = useForm({
 </script>
 
 <template>
-  <Form />
+  <Form @register="register" />
 </template>
 
 ```
