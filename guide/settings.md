@@ -148,7 +148,7 @@ VITE_APP_TITLE = ElementAdmin
 
 ### 配置文件路径
 
-[src/config/app.ts](https://github.com/kailong321200875/vue-element-plus-admin/blob/master/src/config/app.ts)
+[src/store/modules/app.ts](https://github.com/kailong321200875/vue-element-plus-admin/blob/master/src/store/modules/app.ts)
 
 ### 说明
 
