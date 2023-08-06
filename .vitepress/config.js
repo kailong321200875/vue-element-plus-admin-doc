@@ -147,11 +147,43 @@ function createNav() {
         },
       ],
     },
+    {
+      text: '交流群',
+      link: '/group/',
+      items: [
+        {
+          text: '技术交流群',
+          link: '/group/group',
+        },
+      ],
+    },
+    {
+      text: '捐赠',
+      link: '/donate/',
+      items: [
+        {
+          text: '捐赠',
+          link: '/donate/donate',
+        },
+      ],
+    },
   ];
 }
 
 function createSidebar() {
   return {
+    '/group/': [
+      {
+        text: '技术交流群',
+        link: '/group/group',
+      },
+    ],
+    '/donate/': [
+      {
+        text: '捐赠',
+        link: '/donate/donate',
+      },
+    ],
     '/hooks/': [
       {
         text: 'useWatermark',
