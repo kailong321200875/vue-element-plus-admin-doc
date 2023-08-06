@@ -4,18 +4,20 @@
 
 Table 组件位于 [src/components/Table](https://github.com/kailong321200875/vue-element-plus-admin/tree/master/src/components/Table) 内
 
+::: warning 注意
+推荐使用 tsx 来使用 `Table` 组件。
+:::
+
 ## 用法
+
+### 基础用法
 
 ```vue
 <script setup lang="ts">
 import { reactive } from 'vue'
+import { Table, TableColumn } from '@/components/Table'
 
 const columns = reactive<TableColumn[]>([
-  {
-    field: 'index',
-    label: 'index',
-    type: 'index'
-  },
   {
     field: 'title',
     label: 'title'
@@ -23,10 +25,6 @@ const columns = reactive<TableColumn[]>([
   {
     field: 'author',
     label: 'author'
-  },
-  {
-    field: 'action',
-    label: 'action'
   }
 ])
 
@@ -40,8 +38,8 @@ const data = reactive([
     author: 'author2'
   },
   {
-    title: 'title2',
-    author: 'author2'
+    title: 'title3',
+    author: 'author3'
   }
 ])
 </script>
@@ -52,64 +50,124 @@ const data = reactive([
 
 ```
 
-### refTable
-
-如果只使用 `refTable`，所有参数都需要手动传入到 `Table` 组件中，推荐配合 `useTable` 使用。
-
 ### useTable
+
+推荐配合 `useTable` 来使用
 
 复杂点的例子，请[在线预览](https://element-plus-admin.cn/#/components/table/use-table)
 
 ```vue
-<script setup lang="ts">
-import { Table } from '@/components/Table'
-import { getTableListApi } from '@/api/table'
-import { TableData } from '@/api/table/types'
-import { reactive } from 'vue'
+<script setup lang="tsx">
+import { ContentWrap } from '@/components/ContentWrap'
+import { useI18n } from '@/hooks/web/useI18n'
+import { Table, TableColumn, TableSlotDefault } from '@/components/Table'
+import { getTreeTableListApi } from '@/api/table'
+import { reactive, unref } from 'vue'
+import { ElTag, ElButton } from 'element-plus'
 import { useTable } from '@/hooks/web/useTable'
+
+const { tableRegister, tableState } = useTable({
+  fetchDataApi: async () => {
+    const { currentPage, pageSize } = tableState
+    const res = await getTreeTableListApi({
+      pageIndex: unref(currentPage),
+      pageSize: unref(pageSize)
+    })
+    return {
+      list: res.data.list,
+      total: res.data.total
+    }
+  }
+})
+const { loading, dataList, total, currentPage, pageSize } = tableState
+
+const { t } = useI18n()
 
 const columns = reactive<TableColumn[]>([
   {
+    field: 'selection',
+    type: 'selection'
+  },
+  {
     field: 'index',
-    label: 'index',
+    label: t('tableDemo.index'),
     type: 'index'
   },
   {
-    field: 'title',
-    label: 'title'
-  },
-  {
-    field: 'author',
-    label: 'author'
-  },
-  {
-    field: 'display_time',
-    label: 'displayTime'
-  },
-  {
-    field: 'pageviews',
-    label: 'pageviews'
+    field: 'content',
+    label: t('tableDemo.header'),
+    children: [
+      {
+        field: 'title',
+        label: t('tableDemo.title')
+      },
+      {
+        field: 'author',
+        label: t('tableDemo.author')
+      },
+      {
+        field: 'display_time',
+        label: t('tableDemo.displayTime')
+      },
+      {
+        field: 'importance',
+        label: t('tableDemo.importance'),
+        formatter: (_: Recordable, __: TableColumn, cellValue: number) => {
+          return (
+            <ElTag type={cellValue === 1 ? 'success' : cellValue === 2 ? 'warning' : 'danger'}>
+              {cellValue === 1
+                ? t('tableDemo.important')
+                : cellValue === 2
+                ? t('tableDemo.good')
+                : t('tableDemo.commonly')}
+            </ElTag>
+          )
+        }
+      },
+      {
+        field: 'pageviews',
+        label: t('tableDemo.pageviews')
+      }
+    ]
   },
   {
     field: 'action',
-    label: 'action'
+    label: t('tableDemo.action'),
+    slots: {
+      default: (data) => {
+        return (
+          <ElButton type="primary" onClick={() => actionFn(data)}>
+            {t('tableDemo.action')}
+          </ElButton>
+        )
+      }
+    }
   }
 ])
 
-const { register, tableObject, methods } = useTable<TableData>({
-  getListApi: getTableListApi,
-  response: {
-    list: 'list',
-    total: 'total'
-  },
-  props: {
-    columns
-  }
-})
+const actionFn = (data: TableSlotDefault) => {
+  console.log(data)
+}
+</script>
 
-const { getList } = methods
+<template>
+  <ContentWrap :title="`${t('router.treeTable')} ${t('tableDemo.example')}`">
+    <Table
+      v-model:pageSize="pageSize"
+      v-model:currentPage="currentPage"
+      :columns="columns"
+      :data="dataList"
+      row-key="id"
+      :loading="loading"
+      sortable
+      :pagination="{
+        total: total
+      }"
+      @register="tableRegister"
+    />
+  </ContentWrap>
+</template>
 
-getList()
 </script>
 
 <template>
@@ -130,115 +188,43 @@ getList()
 #### 参数介绍
 
 ```ts
-
-interface Response {
-  total: number
-  list: TableData[]
-}
-
-const { register, tableObject, methods, elTableRef } = useTable<TableData>(props: UseTableConfig)
+const { tableRegister, tableState, tableMethods } = useTable(props: UseTableConfig)
 ```
-
-**useTable** 可以传入自定义类型 `<T>`
-
-- T 代表接口返回的表格数据类型。
-
-在实际需求中，可能会遇到分页参数命名不同的情况，请自行在 [src/hooks/web/useTable.ts](https://github.com/kailong321200875/vue-element-plus-admin/tree/master/src/hooks/web/useTable.ts) 进行替换，搜索 `pageSize` 及 `pageIndex`。
 
 **props**
 
-在使用 `useTable` 的时候，可以在 `props` 中传入 `getListApi`，以及 `response`，之后就可以手动调用 `methods.getList()` 方法请求表格数据了。每次表格分页时，则会自动调用接口。
+在使用 `useTable` 的时候，需要传入 `fetchDataApi`，为了保证可定制，需要自行在 `fetchDataApi` 中完成请求逻辑，之后返回结果 { list: Array, total?: number }，后续分页，就可以自动请求数据。
 
-如果需要使用删除方法 `methods.delList()`，则需要在 `props` 中传入 `delListApi` 参数，用于删除时调用接口，目前本项目中单条删除或者批量删除，都是同样的接口同样的参数。如果与实际需求不符，可以自行改造。在 [src/hooks/web/useTable.ts](https://github.com/kailong321200875/vue-element-plus-admin/tree/master/src/hooks/web/useTable.ts) 的 `delList` 以及 `delData` 中修改。
+如果需要删除，同样需要传入 `fetchDelApi` ，返回一个 `Boolean` 来判断是否删除完成，后续 `useTable` 将自行刷新表格。
 
-```ts
-// 删除数据
-delList: async (ids: string[] | number[], multiple: boolean, message = true) => {
-  const tableRef = await getTable()
-  if (multiple) {
-    if (!tableRef?.selections.length) {
-      ElMessage.warning(t('common.delNoData'))
-      return
-    }
-  } else {
-    if (!tableObject.currentRow) {
-      ElMessage.warning(t('common.delNoData'))
-      return
-    }
-  }
-  const paramsObj: AxiosConfig = {
-    data: {
-      ids
-    }
-  }
-  if (message) {
-    ElMessageBox.confirm(t('common.delMessage'), t('common.delWarning'), {
-      confirmButtonText: t('common.delOk'),
-      cancelButtonText: t('common.delCancel'),
-      type: 'warning'
-    })
-      .then(async () => {
-        await delData(paramsObj, ids)
-      })
-      .catch(() => {})
-  } else {
-    await delData(paramsObj, ids)
-  }
-}
-```
+**tableRegister**
 
-```ts
-const delData = async (paramsObj: AxiosConfig, ids: string[] | number[]) => {
-  const res = await (config?.delListApi && config?.delListApi(paramsObj))
-  if (res) {
-    ElMessage.success(t('common.delSuccess'))
+`tableRegister` 用于注册 `useTable`，如果需要使用 `useTable` 提供的 `api`，必须将 `tableRegister` 传入组件的 `onRegister`
 
-    // 计算出临界点
-    const currentPage =
-      tableObject.total % tableObject.pageSize === ids.length || tableObject.pageSize === 1
-        ? tableObject.currentPage > 1
-          ? tableObject.currentPage - 1
-          : tableObject.currentPage
-        : tableObject.currentPage
+**tableState**
 
-    tableObject.currentPage = currentPage
-    methods.getList()
-  }
-}
-```
-
-**register**
-
-`register` 用于注册 `useTable`，如果需要使用 `useTable` 提供的 `api`，必须将 `register` 传入组件的 `onRegister`
-
-**tableObject**
-
-表格对象
+表格状态
 
 | 属性 | 说明 | 类型 | 可选值 | 默认值 |
 | ---- | ---- | ---- | ---- | ---- |
 | pageSize | 每页显示多少条 | `number` | - | 10 |
 | currentPage | 当前页 | `number` | - | 1 |
 | total | 总条数 | `number` | - | - |
-| tableList | 表格数据 | `K[]` | - | [] |
-| parmasObj | AxiosConfig 配置 | `L` | - | {} |
+| dataList | 表格数据 | `any[]` | - | [] |
 | loading | 表格是否加载中 | `boolean` | - | false |
-| currentRow | 当前选中数据 | `Nullable<K>` | - | - |
 
-**methods**
+**tableMethods**
 
 | 方法名 | 说明 | 回调参数 |
 | ---- | ---- | ---- |
 | setProps | 用于表格组件属性 | (props: Recordable) => void |
 | getList | 获取表格数据 | `() => Promise<void>` |
-| setColumn | 设置表头结构 | (columnProps: TableSetPropsType[]) => void |
-| setSearchParams | 与 Search 组件配置，用于获取 Search 组件返回的查询数据 | (data: Recordable) => void |
-| getSelections | 获取多选数据 | () => Promise<K[]> |
-| delList | 删除数据接口 | `(ids: string[], multiple: boolean, message?: boolean) => Promise<void>` |
-
-**elTableRef**
-
-当前 `elTable` 实例，可使用所有 `elTable` 实例方法。
+| setColumn | 设置表头结构 | (columnProps: TableSetProps[]) => void |
+| addColumn | 新增表头结构 | (tableColumn: TableColumn, index?: number) => void |
+| delColumn | 删除表头结构 | (field: string) => void |
+| getElTableExpose | 获取 ElTable 实例 | `() => Promise<typeof ElTable>` |
+| refresh | 刷新表格 | () => void |
+| delList | 删除数据 | `(idsLength: number) => Promise<void>` |
 
 ## Table 属性
 
@@ -259,13 +245,19 @@ const delData = async (paramsObj: AxiosConfig, ids: string[] | number[]) => {
 | align | 内容对齐方式 | `string` | `left`/`center`/`right` | left |
 | headerAlign | 表头对齐方式 | `string` | `left`/`center`/`right` | left |
 | data | 表格数据 | `Recordable[]` | - | [] |
+| showAction | 是否显示表格操作 | `boolean` | - | false |
+| preview | 需要展示图片的字段 | `string[]` | - | - |
 
 ### Columns<span id="Columns"></span>
+
+除了以下属性，还支持 `element-plus` 的 `TableColumn` 属性。
 
 | 属性 | 说明 | 类型 | 可选值 | 默认值 |
 | ---- | ---- | ---- | ---- | ---- |
 | field | 唯一值，如需展示正确的数据，需要与 data 中的属性名对应 | `string` | - | - |
 | label | 表头名称 | `string` | - | - |
+| hidden | 是否隐藏 | `boolean` | - | - |
+| slots | 插槽对象 | `object` | - | - |
 | children | 子项，用于多级表头 | `TableColumn[]` | - | - |
 
 ### Pagination<span id="Pagination"></span>
@@ -278,11 +270,5 @@ const delData = async (paramsObj: AxiosConfig, ids: string[] | number[]) => {
 | ---- | ---- | ---- |
 | setProps | 用于设置表格属性 | (props: Recordable) => void |
 | setColumn | 用于修改表头结构 | (columnProps: TableSetPropsType[]) => void |
-
-## Table 插槽
-
-| 插槽名 | 说明 | 子标签 |
-| ---- | ---- | ---- |
-| append | 插入至表格最后一行之后的内容， 如果需要对表格的内容进行无限滚动操作，可能需要用到这个 slot。 若表格有合计行，该 slot 会位于合计行之上。| - |
-| ${field} | 表格内容 | - |
-| ${field}-header | 表头内容 | - |
+| addColumn | 新增表头结构 | (tableColumn: TableColumn, index?: number) => void |
+| delColumn | 删除表头结构 | (field: string) => void |

@@ -10,7 +10,7 @@ useCrudSchemas 位于 [src/hooks/web/useCrudSchemas.ts](https://github.com/kailo
 
 ::: tip
 
-如果不需要某个字段，如 `formSchema` 不需要 `field` 为 `index` 的字段，可以使用 `form: { show: false }` 进行过滤，其他组件同理。
+如果不需要某个字段，如 `formSchema` 不需要 `field` 为 `index` 的字段，可以使用 `form: { hidden: true }` 进行过滤，其他组件同理。
 
 :::
 
@@ -30,10 +30,10 @@ const crudSchemas = reactive<CrudSchema[]>([
     label: t('tableDemo.index'),
     type: 'index',
     form: {
-      show: false
+      hidden: true
     },
     detail: {
-      show: false
+      hidden: true
     }
   },
   {
@@ -115,7 +115,7 @@ const crudSchemas = reactive<CrudSchema[]>([
     field: 'content',
     label: t('exampleDemo.content'),
     table: {
-      show: false
+      hidden: true
     },
     form: {
       component: 'Editor',
@@ -132,10 +132,10 @@ const crudSchemas = reactive<CrudSchema[]>([
     width: '260px',
     label: t('tableDemo.action'),
     form: {
-      show: false
+      hidden: true
     },
     detail: {
-      show: false
+      hidden: true
     }
   }
 ])

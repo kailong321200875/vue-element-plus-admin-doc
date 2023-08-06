@@ -1,4 +1,6 @@
 // @ts-check
+// const { docsearchPlugin } = require('@vuepress/plugin-docsearch');
+
 /**
  * @type {import('vitepress').UserConfig}
  */
@@ -6,8 +8,9 @@ module.exports = {
   base: process.argv[3] && process.argv[3] === '--gitee' ? '/vue-element-plus-admin-doc/' : '/',
   title: 'vue-element-plus-admin',
   lang: 'zh-CN',
-  description: '一套基于vue3、element-plus、typesScript4、vite3的后台集成方案',
+  description: '一套基于vue3、element-plus、typesScript、vite的后台集成方案',
   head: createHead(),
+  // plugins: [docsearchPlugin({})],
   themeConfig: {
     repo: 'kailong321200875/vue-element-plus-adminc',
     docsRepo: 'kailong321200875/vue-element-plus-admin-doc',
@@ -64,6 +67,10 @@ function createNav() {
         {
           text: '深入',
           link: '/dep/i18n',
+        },
+        {
+          text: 'v2版本重大更新',
+          link: '/guide/version',
         },
       ],
     },
@@ -171,6 +178,10 @@ function createSidebar() {
           {
             text: 'Icon 图标组件',
             link: '/components/icon',
+          },
+          {
+            text: 'Permission 权限组件',
+            link: '/components/permission',
           },
         ],
       },
@@ -313,6 +324,15 @@ function createSidebar() {
           {
             text: '模版生成',
             link: '/dep/create-module',
+          },
+        ],
+      },
+      {
+        text: 'v2版本重大更新',
+        children: [
+          {
+            text: '介绍',
+            link: '/guide/version',
           },
         ],
       },

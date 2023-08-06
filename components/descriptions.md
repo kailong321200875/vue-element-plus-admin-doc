@@ -4,13 +4,17 @@
 
 Descriptions 组件位于 [src/components/Descriptions](https://github.com/kailong321200875/vue-element-plus-admin/tree/master/src/components/Descriptions) 内
 
+::: warning 注意
+推荐使用 `tsx` 来使用 `Descriptions` 组件
+:::
+
 ## 用法
 
 更复杂点的例子，请[在线预览](https://element-plus-admin.cn/#/components/descriptions)
 
 ```vue
-<script setup lang="ts">
-import { Descriptions } from '@/components/Descriptions'
+<script setup lang="tsx">
+import { Descriptions, DescriptionsSchema } from '@/components/Descriptions'
 import { reactive } from 'vue'
 
 const data = reactive({
@@ -69,7 +73,6 @@ const schema = reactive<DescriptionsSchema[]>([
 | title | 标题 | `string` | - | - |
 | message | 提示 | `string` | - | - |
 | collapse | 是否显示展开按钮 | `boolean` | - | true |
-| autoSetPlaceholder | 是否自动设置 placeholder | `boolean` | - | true |
 | schema | 布局结构数据，[详见](#Schema) | `DescriptionsSchema[]` | - | [] |
 | data | 展示的数据 | `Recordable` | - | {} |
 
@@ -86,10 +89,4 @@ const schema = reactive<DescriptionsSchema[]>([
 | labelAlign | 标题对齐方式 | `string` | left/center/right | left |
 | className | 自定义内容标签类名 | `string` | - | - |
 | labelClassName | 自定义标题标签类名 | `string` | - | - |
-
-## Descriptions 插槽
-
-| 插槽名 | 说明 | 子标签 |
-| ---- | ---- | ---- |
-| ${field} | 自定义内容 | - |
-| ${field}-label | 自定义标题| - |
+| slots | 插槽对象 | `object` | - | - |

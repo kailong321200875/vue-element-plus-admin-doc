@@ -16,10 +16,14 @@ import { Editor } from '@/components/Editor'
 import { ref} from 'vue'
 
 const defaultHtml = ref('<p>hello <strong>world</strong></p>')
+
+const change = (html: string) => {
+  console.log(html)
+}
 </script>
 
 <template>
-  <Editor :defaultHtml="defaultHtml" />
+  <Editor v-model="defaultHtml" ref="editorRef" @change="change" />
 </template>
 
 ```
@@ -31,7 +35,7 @@ const defaultHtml = ref('<p>hello <strong>world</strong></p>')
 | editorId | 富文本组件唯一值，必填项 | `string` | - | wangeEditor-1 |
 | height | 高度 | `string`/`number` | - | 500px |
 | editorConfig | wangeditor 组件的所有配置项 | `IEditorConfig` | - | - |
-| defaultHtml | 初始内容 | `string` | - | - |
+| modelValue | 内容双向绑定，支持v-model | `string` | - | - |
 
 ## Editor 事件
 

@@ -215,26 +215,6 @@ export const appModules: AppState = {
 
 如果想要添加新的全局配置属性，需要在 [src/config/app.ts](https://github.com/kailong321200875/vue-element-plus-admin/blob/master/src/config/app.ts) 中 `AppState` 添加对应的类型，并在 `appModules` 对象中，赋予新属性的默认值。
 
-## 缓存配置
-
-统一项目中的写法。
-
-### 说明
-
-在项目中，你可以看到很多地方都使用了 `wsCache.set` 或者 `wsCache.get`，这是基于 [web-storage-cache](https://github.com/wuchangming/web-storage-cache) 进行封装，采用 `hook` 的形式。
-
-该插件对HTML5 `localStorage` 和 `sessionStorage` 进行了扩展，添加了超时时间，序列化方法。可以直接存储 `json` 对象，同时可以非常简单的进行超时时间的设置。
-
-本项目默认是采用 `sessionStorage` 的存储方式，如果更改，可以直接在 [src/hooks/web/useCache.ts](https://github.com/kailong321200875/vue-element-plus-admin/blob/master/src/hooks/web/useCache.ts) 中把 `type: CacheType = 'sessionStorage'` 改为 `type: CacheType = 'localStorage'`，这样项目中的所有用到的地方，都会变成该方式进行数据存储。
-
-如果只想单个更改，可以传入存储类型 `const { wsCache } = useCache('localStorage')`，既可只适用当前存储对象。
-
-::: warning 注意
-
-更改完默认存储方式后，需要清除浏览器缓存并重新登录，以免造成不可描述的问题。
-
-:::
-
 ## 多语言配置
 
 用于配置多语言信息

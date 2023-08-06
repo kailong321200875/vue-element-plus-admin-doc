@@ -100,49 +100,27 @@ export { config }
 :::
 
 ```ts
-import { useAxios } from '@/hooks/web/useAxios'
+import request from '@/config/axios'
 import type { TableData } from './types'
 
-const request = useAxios()
-
-<<<<<<< HEAD
-export const getTableListApi = async (params: any): Promise<IResponse> => {
-  const res = await request.get({ url: '/example/list', params })
-  return res && res.data
+export const getTableListApi = (params: any) => {
+  return request.get({ url: '/example/list', params })
 }
 
-export const saveTableApi = async (data: Partial<TableData>): Promise<IResponse> => {
-  const res = await request.post({ url: '/example/save', data })
-  return res && res.data
+export const getTreeTableListApi = (params: any) => {
+  return request.get({ url: '/example/treeList', params })
 }
 
-export const getTableDetApi = async (id: string): Promise<IResponse<TableData>> => {
-  const res = await request.get({ url: '/example/detail', params: { id } })
-  return res && res.data
+export const saveTableApi = (data: Partial<TableData>): Promise<IResponse> => {
+  return request.post({ url: '/example/save', data })
 }
 
-export const delTableListApi = async (ids: string[] | number[]): Promise<IResponse> => {
-  const res = await request.post({ url: '/example/delete', data: { ids } })
-  return res && res.data
-=======
-export const getTableListApi = ({ params }) => {
-  return request.get<{
-    total: number
-    list: TableData[]
-  }>({ url: '/example/list', params })
+export const getTableDetApi = (id: string): Promise<IResponse<TableData>> => {
+  return request.get({ url: '/example/detail', params: { id } })
 }
 
-export const saveTableApi = ({ data }) => {
-  return request.post<TableData>({ url: '/example/save', data })
-}
-
-export const getTableDetApi = ({ params }) => {
-  return request.get<TableData>({ url: '/example/detail', params })
-}
-
-export const delTableListApi = ({ data }) => {
-  return request.post({ url: '/example/delete', data })
->>>>>>> 2c4729596351950077165070f44bd309003f4a55
+export const delTableListApi = (ids: string[] | number[]): Promise<IResponse> => {
+  return request.post({ url: '/example/delete', data: { ids } })
 }
 
 ```

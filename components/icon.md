@@ -20,7 +20,7 @@ Icon 组件位于 [src/components/Icon](https://github.com/kailong321200875/vue-
 <template>
   <!-- 加载本地 svg -->
   <Icon icon="svg-icon:peoples" />
-  
+
   <!-- 加载 Iconify -->
   <Icon icon="ep:aim" />
 </template>
@@ -61,3 +61,4 @@ const icon = useIcon(props)
 | icon | 图标名 | `string` | - | - |
 | color | 图标颜色 | `string` | - | - |
 | size | 图标大小 | `number` | - | 16 |
+| hoverColor | hover颜色 | `string` | - | - |
