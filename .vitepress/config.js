@@ -108,6 +108,14 @@ function createNav() {
           text: 'useCrudSchemas',
           link: '/hooks/useCrudSchemas',
         },
+        {
+          text: 'useTagsView（2.1.0+）',
+          link: '/hooks/useTagsView',
+        },
+        {
+          text: 'useStorage（2.1.0+）',
+          link: '/hooks/useStorage',
+        },
       ],
     },
     {
@@ -193,6 +201,14 @@ function createSidebar() {
         text: 'useCrudSchemas',
         link: '/hooks/useCrudSchemas',
       },
+      {
+        text: 'useTagsView（2.1.0+）',
+        link: '/hooks/useTagsView',
+      },
+      {
+        text: 'useStorage（2.1.0+）',
+        link: '/hooks/useStorage',
+      },
     ],
     '/components/': [
       {
@@ -212,7 +228,7 @@ function createSidebar() {
             link: '/components/icon',
           },
           {
-            text: 'Permission 权限组件',
+            text: 'Permission 权限组件（2.1.0+）',
             link: '/components/permission',
           },
         ],
@@ -283,6 +299,10 @@ function createSidebar() {
           {
             text: 'Footer 页脚组件',
             link: '/components/footer',
+          },
+          {
+            text: 'JsonEditor JSON编辑器组件（2.2.0+）',
+            link: '/components/json-editor',
           },
         ],
       },
