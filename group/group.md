@@ -1,5 +1,5 @@
 # 技术交流群
 
-仅供技术交流
+如果你想进入技术交流群讨论，请添加我为好友
 
-<img src = "https://github.com/kailong321200875/my-image/raw/master/chat-0910.jpg" />
+<img src = "https://github.com/kailong321200875/my-image/raw/master/me.jpg" />
