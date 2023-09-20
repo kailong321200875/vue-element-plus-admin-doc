@@ -338,7 +338,7 @@ const { searchRegister, searchMethods } = useSearch()
 | isCol | 是否需要栅格布局 | `boolean` | - | true |
 | labelWidth | 表单 label 宽度 | `string`/`number` | - | auto |
 | layout | 操作按钮风格位置 | `string` | inline/bottom | inline |
-| buttomPosition | 底部操作按钮的对齐方式 | `string` | left/center/right | center |
+| buttonPosition | 底部操作按钮的对齐方式 | `string` | left/center/right | center |
 | showSearch | 是否显示查询按钮 | `boolean` | - | true |
 | showReset | 是否显示重置按钮 | `boolean` | - | true |
 | expand | 是否显示伸缩按钮 | `boolean` | - | false |
