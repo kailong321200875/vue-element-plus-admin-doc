@@ -28,13 +28,13 @@
 # 先打包在进行预览
 
 # 预览开发环境
-pnpm run preview:dev
+pnpm run serve:dev
 
 # 预览测试环境
-pnpm run preview:test
+pnpm run serve:test
 
 # 预览生产环境
-pnpm run preview:pro
+pnpm run serve:pro
 ```
 
 ## 部署
