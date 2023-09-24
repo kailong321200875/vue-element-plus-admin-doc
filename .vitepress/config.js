@@ -304,6 +304,10 @@ function createSidebar() {
             text: 'JsonEditor JSON编辑器组件（2.2.0+）',
             link: '/components/json-editor',
           },
+          {
+            text: '图标选择器组件（2.3.0+）',
+            link: '/components/icon-picker',
+          },
         ],
       },
       {
