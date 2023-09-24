@@ -148,7 +148,7 @@ VITE_APP_TITLE = ElementAdmin
 
 ### 配置文件路径
 
-[src/config/app.ts](https://github.com/kailong321200875/vue-element-plus-admin/blob/master/src/config/app.ts)
+[src/store/modules/app.ts](https://github.com/kailong321200875/vue-element-plus-admin/blob/master/src/store/modules/app.ts)
 
 ### 说明
 
@@ -213,13 +213,13 @@ export const appModules: AppState = {
 
 ### 如何添加新属性
 
-如果想要添加新的全局配置属性，需要在 [src/config/app.ts](https://github.com/kailong321200875/vue-element-plus-admin/blob/master/src/config/app.ts) 中 `AppState` 添加对应的类型，并在 `appModules` 对象中，赋予新属性的默认值。
+如果想要添加新的全局配置属性，需要在 [src/store/modules/app.ts](https://github.com/kailong321200875/vue-element-plus-admin/blob/master/src/store/modules/app.ts) 中 `AppState` 添加对应的类型，并在 `appModules` 对象中，赋予新属性的默认值。
 
 ## 多语言配置
 
 用于配置多语言信息
 
-在 [src/config/locale.ts](https://github.com/kailong321200875/vue-element-plus-admin/blob/master/src/config/locale.ts) 内配置
+在 [src/store/modules/locale.ts](https://github.com/kailong321200875/vue-element-plus-admin/blob/master/src/store/modules/locale.ts) 内配置
 
 ```ts
 import { useCache } from '@/hooks/web/useCache'
