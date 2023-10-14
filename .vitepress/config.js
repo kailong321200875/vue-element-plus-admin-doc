@@ -116,6 +116,14 @@ function createNav() {
           text: 'useStorage（2.1.0+）',
           link: '/hooks/useStorage',
         },
+        {
+          text: 'useClipboard（2.4.0+）',
+          link: '/hooks/useClipboard',
+        },
+        {
+          text: 'useNetwork（2.4.0+）',
+          link: '/hooks/useNetwork',
+        },
       ],
     },
     {
@@ -208,6 +216,14 @@ function createSidebar() {
       {
         text: 'useStorage（2.1.0+）',
         link: '/hooks/useStorage',
+      },
+      {
+        text: 'useClipboard（2.4.0+）',
+        link: '/hooks/useClipboard',
+      },
+      {
+        text: 'useNetwork（2.4.0+）',
+        link: '/hooks/useNetwork',
       },
     ],
     '/components/': [
@@ -307,6 +323,10 @@ function createSidebar() {
           {
             text: '图标选择器组件（2.3.0+）',
             link: '/components/icon-picker',
+          },
+          {
+            text: '瀑布流组件（2.4.0+）',
+            link: '/components/waterfall',
           },
         ],
       },
