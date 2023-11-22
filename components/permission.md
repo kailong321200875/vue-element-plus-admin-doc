@@ -27,7 +27,7 @@ Permission 组件位于 [src/components/Permission](https://github.com/kailong32
 
 ### 指令形式
 
-权限控制目前还提供了指令的使用方式，切已经全局注册，所以可以在任意组件中使用 `v-hasPermi`
+权限控制目前还提供了指令的使用方式，并且已经全局注册，所以可以在任意组件中使用 `v-hasPermi`
 
 ```vue
 <ElButton v-hasPermi="'add'" type="primary"> Add </ElButton>
