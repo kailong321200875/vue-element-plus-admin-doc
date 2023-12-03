@@ -25,9 +25,9 @@ var.css 则是注入到根元素，所以在每个地方也都能用到。
 
 :::
 
-## windicss
+## unocss
 
-项目中使用了 [windicss](https://windicss.org/)，具体参见文件使用说明。
+项目中使用了 [unocss](https://github.com/unocss/unocss#readme)，具体参见文件使用说明。
 
 可能没有用到人会觉得用起来很不习惯，但就个人而言，用起来还是挺香的。减少了很多不必要的麻烦
 

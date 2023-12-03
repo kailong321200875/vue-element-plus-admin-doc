@@ -19,7 +19,7 @@
 如果你使用的 IDE 是[vscode](https://code.visualstudio.com/)的话，可以安装以下工具来提高开发效率及代码格式化：
 
 - [Iconify IntelliSense](https://marketplace.visualstudio.com/items?itemName=antfu.iconify) - Iconify 图标插件
-- [windicss IntelliSense](https://marketplace.visualstudio.com/items?itemName=voorjaar.windicss-intellisense) - windicss 提示插件
+- [unocss](https://marketplace.visualstudio.com/items?itemName=antfu.unocss) - unocss 提示插件
 - [I18n-ally](https://marketplace.visualstudio.com/items?itemName=Lokalise.i18n-ally) - i18n 插件
 - [Volar](https://gitee.com/link?target=https%3A%2F%2Fmarketplace.visualstudio.com%2Fitems%3FitemName%3Djohnsoncodehk.volar) - vue 开发必备
 - [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) - 脚本代码检查
@@ -59,7 +59,7 @@ git clone https://gitee.com/kailong110120130/vue-element-plus-admin.git
 
 ### 安装 Node.js
 
-如果您电脑未安装[Node.js](https://nodejs.org/en/)，请安装它，推荐 `16.x` 及以上
+如果您电脑未安装[Node.js](https://nodejs.org/en/)，请安装它，推荐 `18.x` 及以上
 
 **验证**
 

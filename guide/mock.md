@@ -127,9 +127,11 @@ export const delTableListApi = (ids: string[] | number[]): Promise<IResponse> =>
 
 ## axios 配置
 
-**axios** 请求封装存放于 [src/config/axios](https://github.com/kailong321200875/vue-element-plus-admin/blob/master/src/config/axios) 中。
+**axios** 请求封装存放于 [src/axios](https://github.com/kailong321200875/vue-element-plus-admin/blob/master/src/axios) 中。
 
-### config.ts 配置说明
+### 全局 axios 配置说明
+
+axios 全局配置放在 [src/constants](https://github.com/kailong321200875/vue-element-plus-admin/blob/master/src/constants) 中。
 
 ::: tip 注意
 
@@ -138,60 +140,27 @@ export const delTableListApi = (ids: string[] | number[]): Promise<IResponse> =>
 :::
 
 ```ts
-const config: {
-  base_url: {
-    base: string
-    dev: string
-    pro: string
-    test: string
-  }
-  result_code: number | string
-  default_headers: AxiosHeaders
-  request_timeout: number
-} = {
-  /**
-   * api请求基础路径
-   */
-  base_url: {
-    // 开发环境接口前缀
-    base: '/api',
+/**
+ * 请求成功状态码
+ */
+export const SUCCESS_CODE = 0
 
-    // 打包开发环境接口前缀
-    dev: '',
+/**
+ * 请求contentType
+ */
+export const CONTENT_TYPE = 'application/json'
 
-    // 打包生产环境接口前缀
-    pro: '',
-
-    // 打包测试环境接口前缀
-    test: ''
-  },
-
-  /**
-   * 接口成功返回状态码
-   */
-  result_code: '0000',
-
-  /**
-   * 接口请求超时时间
-   */
-  request_timeout: 60000,
-
-  /**
-   * 默认接口请求类型
-   * 可选值：application/x-www-form-urlencoded multipart/form-data
-   */
-  default_headers: 'application/json'
-}
-
-export { config }
-
+/**
+ * 请求超时时间
+ */
+export const REQUEST_TIMEOUT = 60000
 ```
 
 ## Mock 服务
 
 Mock 数据是前端开发过程中必不可少的一环，是分离前后端开发的关键链路。通过预先跟服务器端约定好的接口，模拟请求数据甚至逻辑，能够让前端开发独立自主，不会被服务端的开发进程所阻塞。
 
-本项目使用 [vite-plugin-mock](https://github.com/anncwb/vite-plugin-mock) 来进行 mock 数据处理。**项目内 mock 服务分本地和线上**。
+本项目使用 [vite-plugin-mock-dev-server](https://vite-plugin-mock-dev-server.netlify.app/) 来进行 mock 数据处理。**项目内 mock 服务分本地和线上**。
 
 ### 本地 Mock
 
@@ -205,23 +174,23 @@ Mock 数据是前端开发过程中必不可少的一环，是分离前后端开
 
 ::: tip
 
-文件新增后会自动更新，不需要手动重启，可以在代码控制台查看日志信息 mock 文件夹内会自动注册，排除以\_开头的文件夹及文件
+文件新增后会自动更新，不需要手动重启，可以在代码控制台查看日志信息 mock 文件夹内会自动注册
 
 :::
 
 ::: tip
 
-mock 的值可以直接使用 [mockjs](https://github.com/nuysoft/Mock/wiki) 的语法。
+mock 的值可以直接使用 [fakerjs](https://github.com/faker-js/faker#readme) 的语法。
 
 :::
 
 #### 接口有了，如何去掉 mock
 
-当后台接口已经开发完成，只需要将相应的 `mock` 函数去掉即可。
+可以在vite.config.ts中删除 `MockDevServerPlugin` 对应的代码。
 
 
 ### 线上 mock
 
 由于该项目是一个展示类项目，线上也是用 mock 数据，所以在打包后同时也集成了 mock。通常项目线上一般为正式接口。
 
-项目线上 mock 采用的是 [mockjs](https://github.com/nuysoft/Mock/wiki) 进行 mock 数据模拟。
+项目线上 mock 采用的是 [fakerjs](https://github.com/faker-js/faker#readme) 进行 mock 数据模拟。

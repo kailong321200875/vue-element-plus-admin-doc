@@ -98,33 +98,7 @@ function createNav() {
     },
     {
       text: '常用Hooks',
-      link: '/hooks/',
-      items: [
-        {
-          text: 'useWatermark',
-          link: '/hooks/useWatermark',
-        },
-        {
-          text: 'useCrudSchemas',
-          link: '/hooks/useCrudSchemas',
-        },
-        {
-          text: 'useTagsView（2.1.0+）',
-          link: '/hooks/useTagsView',
-        },
-        {
-          text: 'useStorage（2.1.0+）',
-          link: '/hooks/useStorage',
-        },
-        {
-          text: 'useClipboard（2.4.0+）',
-          link: '/hooks/useClipboard',
-        },
-        {
-          text: 'useNetwork（2.4.0+）',
-          link: '/hooks/useNetwork',
-        },
-      ],
+      link: '/hooks/useWatermark',
     },
     {
       text: '相关链接',
@@ -328,6 +302,10 @@ function createSidebar() {
             text: '瀑布流组件（2.4.0+）',
             link: '/components/waterfall',
           },
+          {
+            text: '视频播放器组件（2.5.0+）',
+            link: '/components/video-player',
+          },
         ],
       },
       {
@@ -336,6 +314,10 @@ function createSidebar() {
           {
             text: 'ImageViewer 图片预览组件',
             link: '/components/image-viewer',
+          },
+          {
+            text: 'VideoViewer  图片预览组件（2.5.0+）',
+            link: '/components/video-viewer',
           },
         ],
       },

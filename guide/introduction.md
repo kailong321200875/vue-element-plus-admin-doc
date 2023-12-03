@@ -49,8 +49,10 @@
 ├── public # 静态资源
 ├── src # 项目代码
 │   ├── api # api接口管理
+|   |── axios # axios配置
 │   ├── assets # 静态资源
 │   ├── components # 公用组件
+│   ├── constants # 存放常量
 │   ├── hooks # 常用hooks
 │   ├── layout # 布局组件
 │   ├── locales # 语言文件
@@ -86,7 +88,7 @@
 ├── stylelint.config.js # stylelint 配置
 ├── tsconfig.json # typescript 配置
 ├── vite.config.ts # vite 配置
-└── windi.config.ts # windicss 配置
+└── uno.config.ts # unocss 配置
 ```
 
 ## 浏览器支持
