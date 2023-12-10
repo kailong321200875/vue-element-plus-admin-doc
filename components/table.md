@@ -246,7 +246,12 @@ const { tableRegister, tableState, tableMethods } = useTable(props: UseTableConf
 | headerAlign | 表头对齐方式 | `string` | `left`/`center`/`right` | left |
 | data | 表格数据 | `Recordable[]` | - | [] |
 | showAction | 是否显示表格操作 | `boolean` | - | false |
-| preview | 需要展示图片的字段 | `string[]` | - | - |
+| preview | 需要展示图片或者视频的字段 | `string[]` | - | - |
+| customContent | 是否自定义内容 | `boolean` | - | false |
+| cardBodyStyle | 卡片内容样式 | `CSSProperties` | - | - |
+| cardBodyClass | 卡片内容类名 | `string` | - | - |
+| cardWrapStyle | 卡片容器样式 | `CSSProperties` | - | - |
+| cardWrapClass | 卡片容器类名 | `string` | - | - |
 
 ### Columns<span id="Columns"></span>
 

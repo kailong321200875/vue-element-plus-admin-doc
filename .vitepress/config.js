@@ -221,6 +221,10 @@ function createSidebar() {
             text: 'Permission 权限组件（2.1.0+）',
             link: '/components/permission',
           },
+          {
+            text: 'BaseButton 按钮组件（2.5.1+）',
+            link: '/components/button',
+          },
         ],
       },
       {
