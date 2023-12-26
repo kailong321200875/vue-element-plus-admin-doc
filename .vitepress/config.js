@@ -101,6 +101,10 @@ function createNav() {
       link: '/hooks/useWatermark',
     },
     {
+      text: '常见问题',
+      link: '/guide/fqa',
+    },
+    {
       text: '相关链接',
       items: [
         {
@@ -395,6 +399,15 @@ function createSidebar() {
           {
             text: '介绍',
             link: '/guide/version',
+          },
+        ],
+      },
+      {
+        text: '常见问题',
+        children: [
+          {
+            text: '前言',
+            link: '/guide/fqa',
           },
         ],
       },
