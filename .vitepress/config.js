@@ -283,10 +283,6 @@ function createSidebar() {
             link: '/components/error',
           },
           {
-            text: 'Sticky 黏性组件',
-            link: '/components/sticky',
-          },
-          {
             text: 'ContentDetailWrap 详情包裹组件',
             link: '/components/content-detail-wrap',
           },

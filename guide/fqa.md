@@ -72,3 +72,11 @@
 项目中大部分使用了 `tsx` ，所以原先 `template` 的一些代码规范就不适用了，如 `v-if` 得使用 `{判断条件 ? 成立 : 不成立}` 来进行显示隐藏，可以查阅下相关文档。
 
 并且请确保如果要使用 `tsx` 语法， `script` 是否声明了 `lang="tsx"`
+
+## 添加路由之后，页面无法展示
+
+如果是在项目中直接添加静态路由，需要确保 appStore 中的 `dynamicRouter` 和 `serverDynamicRouter` 为 `false`，并且手动清除下浏览器的 `localStorage`
+
+## 添加新的 vue 文件后，编辑器类型报错
+
+这是 `Volar` 插件的问题，一般重启下编辑器即可生效。

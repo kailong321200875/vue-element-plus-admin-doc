@@ -23,57 +23,7 @@ server: {
 },
 ```
 
-之后在 [src/config/axios/config.ts](https://github.com/kailong321200875/vue-element-plus-admin/blob/master/src/config/axios/config.ts) 中更改 `base_url.base` 为你所配置的代理即可。
-
-```ts
-const config: {
-  base_url: {
-    base: string
-    dev: string
-    pro: string
-    test: string
-  }
-  result_code: number | string
-  default_headers: AxiosHeaders
-  request_timeout: number
-} = {
-  /**
-   * api请求基础路径
-   */
-  base_url: {
-    // 开发环境接口前缀
-    base: '/api',
-
-    // 打包开发环境接口前缀
-    dev: '',
-
-    // 打包生产环境接口前缀
-    pro: '',
-
-    // 打包测试环境接口前缀
-    test: ''
-  },
-
-  /**
-   * 接口成功返回状态码
-   */
-  result_code: '0000',
-
-  /**
-   * 接口请求超时时间
-   */
-  request_timeout: 60000,
-
-  /**
-   * 默认接口请求类型
-   * 可选值：application/x-www-form-urlencoded multipart/form-data
-   */
-  default_headers: 'application/json'
-}
-
-export { config }
-
-```
+配置接口前缀，可以在对应的 `env` 文件中，修改 `VITE_API_BASE_PATH` 的值
 
 ::: tip 注意
 
@@ -100,7 +50,7 @@ export { config }
 :::
 
 ```ts
-import request from '@/config/axios'
+import request from '@/axios'
 import type { TableData } from './types'
 
 export const getTableListApi = (params: any) => {
@@ -160,7 +110,7 @@ export const REQUEST_TIMEOUT = 60000
 
 Mock 数据是前端开发过程中必不可少的一环，是分离前后端开发的关键链路。通过预先跟服务器端约定好的接口，模拟请求数据甚至逻辑，能够让前端开发独立自主，不会被服务端的开发进程所阻塞。
 
-本项目使用 [vite-plugin-mock-dev-server](https://vite-plugin-mock-dev-server.netlify.app/) 来进行 mock 数据处理。**项目内 mock 服务分本地和线上**。
+本项目使用 [vite-mock-plugin](https://github.com/vbenjs/vite-plugin-mock) 来进行 mock 数据处理。**项目内 mock 服务分本地和线上**。
 
 ### 本地 Mock
 
@@ -180,17 +130,17 @@ Mock 数据是前端开发过程中必不可少的一环，是分离前后端开
 
 ::: tip
 
-mock 的值可以直接使用 [fakerjs](https://github.com/faker-js/faker#readme) 的语法。
+mock 的值可以直接使用 [mock.js](http://mockjs.com/) 的语法。
 
 :::
 
 #### 接口有了，如何去掉 mock
 
-可以在vite.config.ts中删除 `MockDevServerPlugin` 对应的代码。
+可以在对应的 `env` 文件中设置 `VITE_USE_MOCK` 为 `false` ，如果想要更彻底一点，可以在vite.config.ts中删除 `viteMockServe` 对应的代码。
 
 
 ### 线上 mock
 
 由于该项目是一个展示类项目，线上也是用 mock 数据，所以在打包后同时也集成了 mock。通常项目线上一般为正式接口。
 
-项目线上 mock 采用的是 [fakerjs](https://github.com/faker-js/faker#readme) 进行 mock 数据模拟。
+项目线上 mock 采用的是 [mock.js](http://mockjs.com/) 进行 mock 数据模拟。

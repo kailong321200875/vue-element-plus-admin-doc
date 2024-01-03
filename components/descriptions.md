@@ -1,6 +1,10 @@
 # Descriptions 描述组件
 
-对 `element-plus` 的 `Descriptions` 组件进行封装。
+::: warning 注意
+从 v2.5.3之后，Descriptions 组件不再基于 `element-plus` 的 `Descriptions` 进行二次封装，所以可能有的属性无法使用，具体可以自行修改或者改造，或者可以提issue。
+:::
+
+~~对 `element-plus` 的 `Descriptions` 组件进行封装。~~
 
 Descriptions 组件位于 [src/components/Descriptions](https://github.com/kailong321200875/vue-element-plus-admin/tree/master/src/components/Descriptions) 内
 
