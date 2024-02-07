@@ -4,7 +4,7 @@
 
 ## 群二维码
 
-<img src = "https://github.com/kailong321200875/my-image/raw/master/WechatIMG419.jpg" />
+<img src = "https://github.com/kailong321200875/my-image/raw/master/WechatIMG425.jpg" />
 
 ## 我的二维码
 
