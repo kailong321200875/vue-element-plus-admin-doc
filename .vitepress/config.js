@@ -310,6 +310,14 @@ function createSidebar() {
             text: '视频播放器组件（2.5.0+）',
             link: '/components/video-player',
           },
+          {
+            text: '头像列表组件（2.7.0+）',
+            link: '/components/avatars',
+          },
+          {
+            text: '我同意组件（2.7.0+）',
+            link: '/components/i-agree',
+          },
         ],
       },
       {
