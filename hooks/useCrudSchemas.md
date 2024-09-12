@@ -156,7 +156,7 @@ const { allSchemas } = useCrudSchemas(crudSchemas)
 `allSchemas` 存放着四个组件所需要的数据结果
 
 
-***allSchemas.fromSchema***
+***allSchemas.formSchema***
 
 `Form` 组件的 `Sechema`
 
@@ -178,6 +178,6 @@ const { allSchemas } = useCrudSchemas(crudSchemas)
 | ---- | ---- | ---- | ---- | ---- |
 | search | 用于设置 `searchSchema` | `CrudSearchParams` | - | - |
 | table | 用于设置 `tableColumns` | `CrudTableParams` | - | - |
-| form | 用于设置 `fromSchema` | `CrudFormParams` | - | - |
+| form | 用于设置 `formSchema` | `CrudFormParams` | - | - |
 | detail | 用于设置 `DescriptionsSchema` | `CrudDescriptionsParams` | - | - |
 | children | 如果是 `Table` 组件，则可能会有多表头的情况存在 | `CrudSchema[]` | - | - |
